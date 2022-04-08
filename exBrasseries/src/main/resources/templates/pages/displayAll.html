@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="produit : ${liste_produit}" th:object="${produit}">
+        <p th:text="|marque: *{marque}|"></p>
+        <p th:text="|modele: *{modele}|"></p>
+        <p th:text="|prix: *{prix}|"></p>
+        <p><a th:href="@{/produit/{id}(id=*{id}, param1='param1')}">détails</a></p>
+    </li>
+</ul>
+
+
+</body>
+</html>
